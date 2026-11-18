@@ -91,7 +91,7 @@ plugins:
     rpsluna-adapter-buttons:gvytf0:
       autoRegister: true
     rpsluna-adapter-vision:vis949:
-      port: ${{ env.RPS_VISION_PORT || 9498 }}
+      port: 9498
       defaultDifficulty: adaptive
       enableDifficultySelector: true
       kioskSkin: cyber
@@ -107,7 +107,7 @@ plugins:
       model: ${{ env.LLM_MODEL }}
       persona: ${{ env.LLM_PERSONA }}
     rpsluna-renderer-portal:rx2nks:
-      port: ${{ env.RPS_PORTAL_PORT || 8498 }}
+      port: 8498
       title: rpsluna RPS 赛博竞技场
     rpsluna-renderer-console:lg5cax:
       broadcastEvents: true
