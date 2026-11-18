@@ -1,0 +1,110 @@
+plugins:
+  group:server:
+    server:zqds9a:
+      port: 51498
+      maxPort: 51499
+    ~server-satori:z2kzff: {}
+    ~server-temp:qfe3f8: {}
+  group:basic:
+    ~admin:x9lfp1: {}
+    ~bind:44miph: {}
+    commands:glfh6p: {}
+    help:uecszo: {}
+    http:lx4eq3: {}
+    ~inspect:lb378p: {}
+    locales:a14gbn: {}
+    proxy-agent:zt7dax: {}
+    rate-limit:wbht6o: {}
+    telemetry:qtr0zt: {}
+  group:console:
+    actions:fvcxem: {}
+    analytics:uzro5y: {}
+    android:urcjqg:
+      $if: env.KOISHI_AGENT?.includes('Android')
+    ~auth:dnppu0: {}
+    config:96u6si: {}
+    console:6f039u:
+      open: true
+      dev:
+        fs:
+          strict: false
+          allow:
+            - ..
+            - >-
+              G:/GGames/Minecraft/shuyeyun/qq-bot/koishi-dev/koishi-dev-8/external
+    dataview:12pj9l: {}
+    desktop:4a6n0l:
+      $if: env.KOISHI_AGENT?.includes('Desktop')
+    explorer:vkpmcw: {}
+    logger:z3epd6: {}
+    insight:j960c3: {}
+    market:nm4a0d:
+      search:
+        endpoint: https://registry.koishi.chat/index.json
+    notifier:jxmdht: {}
+    oobe:l7dp7a: {}
+    sandbox:zydp7m: {}
+    status:2ux7qq: {}
+    theme-vanilla:vkryo1: {}
+    theme-lxgw-wenkai:lxgw01:
+      colorPreset: lxgw-blue
+  group:storage:
+    ~database-mongo:3joat8:
+      database: koishi
+    ~database-mysql:lrmvqn:
+      database: koishi
+    ~database-postgres:1c98g2:
+      database: koishi
+    database-sqlite:8k52r7:
+      path: data/koishi.db
+    assets-local:goawxl: {}
+  group:adapter:
+    ~adapter-dingtalk:p066ei: {}
+    ~adapter-discord:qawjev: {}
+    ~adapter-kook:tzv6g1: {}
+    ~adapter-lark:ddsvav: {}
+    ~adapter-line:dmli3p: {}
+    ~adapter-mail:s8929z: {}
+    ~adapter-matrix:vn914r: {}
+    ~adapter-qq:rswb83: {}
+    ~adapter-satori:whs2gb: {}
+    ~adapter-slack:i04hib: {}
+    ~adapter-telegram:dclejl: {}
+    ~adapter-wechat-official:foh2uh: {}
+    ~adapter-wecom:ugrnyk: {}
+    ~adapter-whatsapp:bvtqqr: {}
+    ~adapter-zulip:sqhksh: {}
+  group:develop:
+    $if: env.NODE_ENV === 'development'
+    hmr:l4soot:
+      root:
+        - .
+        - ../rpsluna
+        - external/theme-lxgw-wenkai
+  group:rpsluna:
+    rpsluna-core:4uzqnd:
+      defaultRoomName: RPS 赛博博弈竞技场
+    rpsluna-adapter-satori-command:cmd849:
+      commandName: rps
+      enableButtons: true
+      enableAutoNextRound: true
+    rpsluna-adapter-buttons:gvytf0:
+      autoRegister: true
+    rpsluna-adapter-window:o64mha:
+      port: ${{ env.RPS_VISION_PORT || 18082 }}
+    rpsluna-strategy-markov:uhytql:
+      order: 2
+      decayFactor: 0.85
+    rpsluna-strategy-all:ldijt0:
+      enableIocaine: true
+      enableCheat: true
+    rpsluna-strategy-llm:gsdohd:
+      endpoint: ${{ env.LLM_ENDPOINT }}
+      apiKey: ${{ env.LLM_API_KEY }}
+      model: ${{ env.LLM_MODEL }}
+      persona: ${{ env.LLM_PERSONA }}
+    rpsluna-renderer-portal:rx2nks:
+      port: ${{ env.RPS_PORTAL_PORT || 8498 }}
+      title: rpsluna RPS 赛博竞技场
+    rpsluna-renderer-console:lg5cax:
+      broadcastEvents: true
