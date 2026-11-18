@@ -90,8 +90,11 @@ plugins:
       enableAutoNextRound: true
     rpsluna-adapter-buttons:gvytf0:
       autoRegister: true
-    rpsluna-adapter-window:o64mha:
-      port: ${{ env.RPS_VISION_PORT || 18082 }}
+    rpsluna-adapter-vision:vis949:
+      port: ${{ env.RPS_VISION_PORT || 9498 }}
+      defaultDifficulty: adaptive
+      enableDifficultySelector: true
+      kioskSkin: cyber
     rpsluna-strategy-markov:uhytql:
       order: 2
       decayFactor: 0.85
