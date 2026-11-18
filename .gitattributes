@@ -15,3 +15,19 @@ README.md linguist-detectable=true
 README.md linguist-documentation=false
 **/README.md linguist-detectable=true
 **/README.md linguist-documentation=false
+
+# 将 YAML 与 JSON 纳入 GitHub 语言统计 (关闭 data 类型过滤)
+*.yml linguist-detectable=true
+*.yaml linguist-detectable=true
+*.json linguist-detectable=true
+
+koishi.yml linguist-detectable=true
+yakumo.yml linguist-detectable=true
+.yarnrc.yml linguist-detectable=true
+package.json linguist-detectable=true
+tsconfig.json linguist-detectable=true
+tsconfig.base.json linguist-detectable=true
+
+# 锁文件标记为生成文件，避免破坏正常语言统计比例
+yarn.lock linguist-generated=true
+package-lock.json linguist-generated=true
