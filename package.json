@@ -1,6 +1,6 @@
 {
   "name": "koishi-bundle-rpsluna",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "开箱即用的石头剪刀布多模态体感博弈平台整合包 (Koishi Bundle)",
   "packageManager": "yarn@4.1.0",
   "private": true,
